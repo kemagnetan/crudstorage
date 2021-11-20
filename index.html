@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Media Pembelajaran Interaktif</title>
+    </head>
+
+    <body>
+        Upload Files<br />
+        <input type="file" id="files" multiple /><br /><br />
+        <button id="send">Upload</button>
+        <p id="uploading"></p>
+        <progress value="0" max="100" id="progress"></progress>
+
+       <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+
+        <script>
+  
+  
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyAXTrIuXO4OGau7EliaUj6XE-7OS0FIN8Q",
+            authDomain: "percobaan-3aa8e.firebaseapp.com",
+            databaseURL: "https://percobaan-3aa8e-default-rtdb.firebaseio.com",
+            projectId: "percobaan-3aa8e",
+            storageBucket: "percobaan-3aa8e.appspot.com",
+            messagingSenderId: "51589690048",
+            appId: "1:51589690048:web:e63a8de81c95edc3d7f325",
+            measurementId: "G-D8GZMGNJ69"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+    
+                
+                //======================
+                var files = [];
+                    document.getElementById("files").addEventListener("change", function(e) {
+                    files = e.target.files;
+                    });       
+                //==========================
+                document.getElementById("send").addEventListener("click", function() {
+      //checks if files are selected
+      if (files.length != 0) {
+
+      //Loops through all the selected files
+      for (let i = 0; i < files.length; i++) {
+
+        //create a storage reference
+        var storage = firebase.storage().ref(files[i].name);
+
+        //upload file
+        var upload = storage.put(files[i]);
+
+        //update progress bar
+        upload.on(
+          "state_changed",
+          function progress(snapshot) {
+            var percentage =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            document.getElementById("progress").value = percentage;
+          },
+
+          function error() {
+            alert("error uploading file");
+          },
+
+          function complete() {
+            document.getElementById(
+              "uploading"
+            ).innerHTML += `${files[i].name} upoaded <br />`;
+          }
+        );
+      }
+      } else {
+      alert("No file chosen");
+      }
+      });
+
+      //===============================
+                function getFileUrl(filename) {
+            //create a storage reference
+            var storage = firebase.storage().ref(filename);
+
+            //get file url
+            storage
+            .getDownloadURL()
+            .then(function(url) {
+            console.log(url);
+            })
+            .catch(function(error) {
+            console.log("error encountered");
+            });
+            }   
+
+        </script>
+        
+    </body>
+</html>
