@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Halaman Guru</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+ 
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Halaman Guru</a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="../index.html"><span class="fa fa-briefcase mr-3"></span> Bank Soal</a>
+	          </li>
+	          <li >
+	              <a href="../nilai/index.html"><span class="fa fa-briefcase mr-3"></span> Nilai Siswa</a>
+	          </li>
+	          <li>
+              <a href="../jawaban/index.html"><span class="fa fa-briefcase mr-3"></span> Jawaban siswa</a>
+	          </li>
+	          <li class="active">
+              <a href="#"><span class="fa fa-briefcase mr-3"></span> Kontrol</a>
+	          </li>
+	        </ul>
+
+	        <div class="mb-5">
+					
+					</div>
+
+	        <div class="footer">
+	        	<p>
+                    Pada halaman ini anda dapat mengelola soal, mengunci kuis dan melihat jawaban siswa.
+                </p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        
+      <div id="content" class="p-4 p-md-5 pt-5">
+          <br>
+        <h2 class="mb-4"># KONTROL KUIS/EVALUASI </h2>
+	
+		<!--badan konten ---------------------------------------------------------------------------->
+        <!--badan konten ---------------------------------------------------------------------------->
+        <center>
+         
+          <table class="table">
+             
+              <tr>
+                  <td ><b>Kuis 1</b></td>
+                  <td><button onclick="on_kuis1();" class="btn btn-secondary" id="on1">ON</button>
+                      <button onclick="off_kuis1();" class="btn btn-secondary" id="off1">OFF</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td><b>Kuis 2</b></td>
+                  <td><button onclick="on_kuis2();" class="btn btn-secondary" id="on2">ON</button>
+                      <button onclick="off_kuis2();" class="btn btn-secondary" id="off2">OFF</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td ><b>Kuis 3</b></td>
+                  <td><button onclick="on_kuis3();" class="btn btn-secondary" id="on3">ON</button>
+                      <button onclick="off_kuis3();" class="btn btn-secondary" id="off3">OFF</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td ><b>Evaluasi</b></td>
+                  <td><button onclick="on_kuis4();" class="btn btn-secondary" id="on4">ON</button>
+                      <button onclick="off_kuis4();" class="btn btn-secondary" id="off4">OFF</button>
+                  </td>
+              </tr>
+          </table>
+          <hr>
+          </center>
+          <br>
+          <h2 class="mb-4"># KKM KUIS/EVALUASI </h2>
+          <center>
+         
+            <table class="table" >
+              <thead>
+                <tr>
+                    <th scope="col" >Kuis/Evaluasi</th>
+                    <th scope="col">Ubah KKM</th>
+                    <th scope="col" >KKM saat ini</th>
+ 
+                </tr>
+                </thead>
+                <tr>
+                    <td ><b>Kuis 1</b> </td>
+                    <td>
+                        <input id="kkm1" type="text" name="kkm1" placeholder="KKM" >
+                        <button class="btn btn-success btn-sm"  type="button" onclick="km1()">Update</button>
+                    </td>
+                    <td > <a id="isi1" type="text" > </td>
+                </tr>
+                <tr>
+                    <td><b>Kuis 2</b></td>
+                    <td>
+                        <input id="kkm2" type="text" name="kkm2" placeholder="KKM" >
+                        <button class="btn btn-success btn-sm"  type="button" onclick="km2()">Update</button>
+                    </td>
+                    <td > <a id="isi2" type="text" style="pointer-events:none;"> </td>
+                </tr>
+                <tr>
+                    <td ><b>Kuis 3</b></td>
+                    <td>
+                      <input id="kkm3" type="text" name="kkm3" placeholder="KKM" >
+                      <button class="btn btn-success btn-sm"  type="button" onclick="km3()">Update</button>
+                    </td>
+                    <td > <a id="isi3" type="text" style="pointer-events:none;"> </td>
+                </tr>
+                <tr>
+                    <td><b>Evaluasi</b></td>
+                    <td>
+                      <input id="kkm4" type="text" name="kkm4" placeholder="KKM" >
+                      <button class="btn btn-success btn-sm"  type="button" onclick="km4()">Update</button>
+                    </td>
+                    <td > <a id="isi4" type="text" style="pointer-events:none;"> </td>
+                </tr>
+                
+            </table>
+            <hr>
+            </center>
+
+
+          <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+  
+          <script src="guru.js"></script>
+
+        <!--batas!!!---------------------------------------------------------------------------->
+		 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

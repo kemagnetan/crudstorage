@@ -1,0 +1,83 @@
+<html >
+
+    <head>
+        <link rel="stylesheet" href="1.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+	<div class="header">
+		<a href="index.html"><img src="https://img.icons8.com/ios-filled/250/ffffff/home.png" title="Beranda"></a><center>	<b>REKAP NILAI SISWA</b></center>
+	</div>
+	    <br>
+                <div class="pencarian">
+                    
+                    <label for="nama"> Pilih Kuis :
+                        <select id="kuis" name="kuis" class="mundur" aria-placeholder="-PILIH KUIS-">
+                            <option value="0" selected="selected">-- PILIH KUIS --</option>
+                            <option value="pretes">PRETES</option>
+                            <option value="kuis1">KUIS 1</option>
+                            <option value="kuis2">KUIS 2</option>
+                            <option value="kuis3">KUIS 3</option>
+                            <option value="evaluasi">Evaluasi</option>
+                        </select>
+                    </label>
+                    <label for="nama"> Kelas :
+                        <select id="kelas" name="kelas" class="mundur" aria-placeholder="-PILIH SEKOLAH-">
+                            <option value="0" selected="selected">-- PILIH KELAS --</option>
+                            <option value="1">9A</option>
+                            <option value="2">9B</option>
+                            <option value="3">9C</option>
+                            <option value="4">9D</option>
+                            <option value="5">9E</option>
+                            <option value="6">9F</option>
+                            <option value="7">9G</option>
+                        </select>
+                    </label>
+                    <button class="btncari" onclick="mencari()">Cari</button>
+
+                </div>
+                
+
+                <div class="main-wrapper">
+                    <div class="table-wrapper">
+                        <table class="demo-table" id="tabel">
+                        <thead>
+                        <tr>
+                            <td >Sekolah</td>
+                            <td>Kelas</td>
+                            <td >Nama</td>
+                            <td >Skor</td>
+                            <td >Hari</td>
+                            <td >Waktu</td>
+                            <td >Hapus</td>
+                        </tr>
+                    </thead>
+                        
+                    <tbody class="disini"></tbody>
+
+                    </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    <br>
+        <center>
+        <button  type="button" id="export" onclick="exportTableToExcel('tabel')">Download</button>
+        </center>
+        <br>
+        <br>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+
+    <script src="script2.js"></script>
+
+
+
+</body>
+
+</html>

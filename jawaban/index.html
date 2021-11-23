@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Halaman Guru</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <style>
+      .salah{
+	      color: rgb(241, 87, 87);
+	    }
+  .benar{
+    color: rgb(7, 182, 80);
+  }
+    </style>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Halaman Guru</a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="../index.html"><span class="fa fa-briefcase mr-3"></span> Bank Soal</a>
+	          </li>
+	          <li >
+	              <a href="../nilai/index.html"><span class="fa fa-briefcase mr-3"></span> Nilai Siswa</a>
+	          </li>
+	          <li class="active">
+              <a href="#" class="active"><span class="fa fa-briefcase mr-3"></span> Jawaban siswa</a>
+	          </li>
+	          <li>
+              <a href="../kontrol/"><span class="fa fa-briefcase mr-3"></span> Kontrol</a>
+	          </li>
+	        </ul>
+
+	        <div class="mb-5">
+					
+					</div>
+
+	        <div class="footer">
+	        	<p>
+                    Pada halaman ini anda dapat mengelola soal, mengunci kuis dan melihat jawaban siswa.
+                </p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        
+      <div id="content" class="p-4 p-md-5 pt-5">
+          <br>
+        <h2 class="mb-4"># Jawaban SISWA </h2>
+	
+		<!--badan konten ---------------------------------------------------------------------------->
+    <!--badan konten ---------------------------------------------------------------------------->
+            <div class="pencarian">
+                            
+              <label for="nama"> Pilih Kuis :
+                  <select id="kuis" name="kuis" class="mundur" aria-placeholder="-PILIH KUIS-">
+                      <option value="0" selected="selected">-- PILIH KUIS --</option>
+                      <option value="pretes">PRETES</option>
+                      <option value="kuis1">KUIS 1</option>
+                      <option value="kuis2">KUIS 2</option>
+                      <option value="kuis3">KUIS 3</option>
+                      <option value="evaluasi">Evaluasi</option>
+                  </select>
+              </label>
+              <label for="nama"> Kelas :
+                  <select id="kelas" name="kelas" class="mundur" aria-placeholder="-PILIH SEKOLAH-">
+                      <option value="0" selected="selected">-- PILIH KELAS --</option>
+                      <option value="1">9A</option>
+                      <option value="2">9B</option>
+                      <option value="3">9C</option>
+                      <option value="4">9D</option>
+                      <option value="5">9E</option>
+                      <option value="6">9F</option>
+                      <option value="7">9G</option>
+                  </select>
+              </label>
+              <button class="btn btn-primary btn-sm" onclick="mencari()">Cari</button>
+              <button class="btn btn-success btn-sm"  type="button" id="export" onclick="exportTableToExcel('tabel')">Download</button>
+
+          </div>
+          <hr>
+
+          <div class="main-wrapper">
+              <div class="table-wrapper">
+                  <table class="table" id="tabel">
+                  <thead>
+                   
+                 </thead>
+                  
+              <tbody class="disini"></tbody>
+
+              </table>
+              </div>
+          </div>
+
+
+
+        </div>
+        </div>
+
+
+
+          </div>
+          <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+
+          <script src="jawaban.js"></script>
+
+
+      <!--batas!!!---------------------------------------------------------------------------->
+		 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

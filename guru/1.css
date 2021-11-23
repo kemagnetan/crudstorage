@@ -1,0 +1,276 @@
+
+body{
+	margin: unset;
+	font-family: Arial, Helvetica, sans-serif;
+}
+table tr img{
+	width: 70%;
+}
+.border{
+	background-color:rgba(47, 79, 79, 0.212) ;
+	border-radius: 10px;
+	padding: 5px;
+}
+.header{
+	
+	width:auto;
+	height:5%;
+	padding: 30px;
+	background:#014661;
+	font-family:arial;
+	color:white;
+	font-size: 17pt;
+
+}	
+.salah{
+	background-color: rgb(241, 87, 87);
+	color: white;
+}
+.benar{
+	background-color: rgb(7, 182, 80);
+	color: white;
+}
+.pencarian{
+	background-color: #007cad;
+	color: white;
+	width: auto;
+    text-align: center;
+    padding: 10px;
+}
+.btncari{
+    width: 100px;
+    padding: 4px;
+    background-color:white;
+    color: #007cad;
+}
+.btncari:hover{
+    background-color: rgb(235, 231, 231);
+}
+.btnhapus{
+    background-color:firebrick;
+    color: white;
+    width: 150px;
+}
+.btnhapus:hover{
+    background-color:rgb(104, 13, 13);
+    color: white;
+    width: 150px;
+}
+.header img{
+	width: 50px;
+	position: absolute;
+	left: 40px;
+	top: 20px;
+	cursor: pointer;
+}
+.header img:hover{
+	transform: scale(1.2);
+}
+.petunjuk{
+	width:50%;
+	height:15%;
+	position: absolute;
+	left: 25%;
+	font-family:arial;
+	font-size:8pt;
+	color:#32404E;
+	text-align: center;
+	
+
+}
+
+button{
+	background-color:#257C9F ;
+	color: white;
+	width: 200px;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border-width: 0px;
+}
+button:hover{
+	background-color:#2d96c0 ;
+}
+
+
+/*css3 design scrollbar*/
+::-webkit-scrollbar {
+    width: 7px;
+}
+ 
+::-webkit-scrollbar-track {     
+    background: white;    
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #133847;
+	border-radius:10px;
+}
+.nav{
+	display: none;
+}
+.menu{
+	display: none;
+}
+.nav{
+	display: none;
+}
+.gambaricon:hover{
+transform: scale(1.5);
+}
+.iconabout:hover{
+transform: scale(1.8);
+}
+/*desain tabel */
+
+		.main-wrapper a {
+			text-decoration: none;
+			color: #3586b7;
+		}
+		.main-wrapper a.text-link:hover {
+			border-bottom: 1px dashed #CCCCCC;
+		}
+		.tutorial-link-wrapper {
+			text-align: center;
+		}
+		header {
+			padding: 10px 30px 7px 30px;
+			border-bottom: 2px solid #636b71;
+			background: #343d44;
+		}
+		footer {   
+			background: #343d44;
+			padding: 10px 0 7px 30px;
+			color: #b9bfc3;
+			font-size: 13px;
+		}
+		footer a {
+			color: #b9bfc3;
+			text-decoration: none;
+			margin-left: 10px;
+		}
+		.link-header {
+			margin-top: 10px;
+		}
+		.link-header a {
+			font-size: 15px;
+			color: #b9bfc3;
+			text-decoration: none;
+			margin: 0;
+		}
+		.link-header a.home:hover {
+			color: #b9bfc3;
+		}
+		.main-wrapper {
+			padding: 25px 0;
+		}
+		.link-header {
+			float: right;
+		}
+		.clearfix {
+			clear: both;
+		}
+		@media screen and (max-width: 450px) {
+			header,
+			footer {
+				text-align: center;
+			}
+			.link-header {
+				float: none;
+				margin: 0;
+			}
+		}
+		
+		/* TABLE */
+		table {
+			margin: auto;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
+			font-size: 12px;
+		}
+
+		h1 {
+			margin: 25px auto 0;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 17px;
+		}
+
+		table td {
+			transition: all .5s;
+		}
+		.table-wrapper {
+			overflow: auto;
+		}
+		.main-wrapper {
+			padding: 20px;
+		}
+		.main-wrapper a:hover {
+			border-bottom: 1px dashed #CCCCCC;
+		}
+		
+		/* Table */
+		.demo-table {
+			border-collapse: collapse;
+			font-size: 14px;
+			min-width: 537px;
+		}
+
+		.demo-table th, 
+		.demo-table td {
+			border: 1px solid #e1edff;
+			padding: 7px 17px;
+		}
+		.demo-table caption {
+			margin: 7px;
+		}
+
+		/* Table Header */
+		.demo-table thead th {
+			background-color: #508abb;
+			color: #FFFFFF;
+			border-color: #6ea1cc !important;
+			text-transform: uppercase;
+		}
+
+
+		
+/*Tampilan hp*/
+@media screen and (max-width:760px){
+
+	table tr img{
+		width: 300px;
+	}
+
+	table{
+		margin-left: -60px;
+	}
+	
+	.pencarian{
+		background-color: #007cad;
+		color: white;
+		width: 70%;
+		padding: 5%;
+		border-radius: 7px;
+		font-size: 10pt;
+	}
+	.header{
+	
+		width:auto;
+		height:auto;
+		padding: 30px;
+		background:#014661;
+		font-family:arial;
+		color:white;
+		font-size: 14pt;
+		margin: 0px;
+	
+	}
+	.header img{
+		width: 50px;
+		position: absolute;
+		left: 10px;
+		top: 25px;
+		cursor: pointer;
+	}
+
+}

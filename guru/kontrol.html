@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="halamanguru.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="head">
+            <a href="index.html"><img src="https://img.icons8.com/ios-filled/250/ffffff/home.png" titREKAle="Beranda"></a><center>	<b>KUNCI/BUKA KUIS DAN EVALUASI</b></center>
+            <br>
+            <center>
+                <div class="judul" id="judul" style="display: none;">Pada halaman ini anda dapat mengaktifkan atau mengaktifkan kuis/evaluasi pada media ini.</div>
+                <br><br>
+                <table>
+                   
+                    <tr>
+                        <td style="background-color: #1f84ac; color: white;"><b>Kuis 1</b></td>
+                        <td><button onclick="on_kuis1();" class="btnvidio" id="on1">ON</button>
+                            <button onclick="off_kuis1();" class="btnvidio" id="off1">OFF</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #1f84ac; color: white;"><b>Kuis 2</b></td>
+                        <td><button onclick="on_kuis2();" class="btnvidio" id="on2">ON</button>
+                            <button onclick="off_kuis2();" class="btnvidio" id="off2">OFF</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #1f84ac; color: white;"><b>Kuis 3</b></td>
+                        <td><button onclick="on_kuis3();" class="btnvidio" id="on3">ON</button>
+                            <button onclick="off_kuis3();" class="btnvidio" id="off3">OFF</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #1f84ac; color: white;"><b>Evaluasi</b></td>
+                        <td><button onclick="on_kuis4();" class="btnvidio" id="on4">ON</button>
+                            <button onclick="off_kuis4();" class="btnvidio" id="off4">OFF</button>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+        </div>
+
+    
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+
+    <script src="guru.js"></script>
+    </body>
+</html>

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <style>
@@ -36,13 +36,13 @@
 	            <a href="#"><span class="fa fa-briefcase mr-3"></span> Bank Soal</a>
 	          </li>
 	          <li>
-	              <a href="/nilai/index.html"><span class="fa fa-briefcase mr-3"></span> Nilai Siswa</a>
+	              <a href="#"><span class="fa fa-briefcase mr-3"></span> Nilai Siswa</a>
 	          </li>
 	          <li>
-              <a href="/jawaban/index.html"><span class="fa fa-briefcase mr-3"></span> Jawaban siswa</a>
+              <a href="#"><span class="fa fa-briefcase mr-3"></span> Jawaban siswa</a>
 	          </li>
 	          <li>
-              <a href="/kontrol/index.html"><span class="fa fa-briefcase mr-3"></span> Kontrol</a>
+              <a href="#"><span class="fa fa-briefcase mr-3"></span> Kontrol</a>
 	          </li>
 	        </ul>
 
@@ -65,16 +65,16 @@
           <br>
         <h2 class="mb-4">Bank Soal </h2>
 		<div class="btn-group">
-			<a href="#" class="btn btn-primary active" aria-current="page">Kuis 1</a>
-			<a href="/addSoal/kuis2.html" class="btn btn-primary">Kuis 2</a>
-			<a href="/addSoal/kuis3.htm" class="btn btn-primary">Kuis 3</a>
-			<a href="/addSoal/evaluasi.html" class="btn btn-primary">Evaluasi</a>
+			<a href="../index.html" class="btn btn-primary " aria-current="page">Kuis 1</a>
+			<a href="kuis2.html" class="btn btn-primary ">Kuis 2</a>
+			<a href="#" class="btn btn-primary active">Kuis 3</a>
+			<a href="evaluasi.html" class="btn btn-primary">Evaluasi</a>
 		  </div>
 		  <!--badan konten tambah soal-->
 		  <div class="container" style="margin-top: 50px;">
     
 
-			<h4 class="text-center"> KUIS 1</h4>
+			<h4 class="text-center"> KUIS 3</h4>
 		
 			<h5># Tamah Soal</h5>
 			<div class="card card-default">
@@ -130,8 +130,8 @@
 			
 					   
 		
-						<button id="submitSoal" type="button" class="btn btn-primary">Tambah Data</button>
-						<button onclick="getdata()" type="button" class="btn btn-dark">Tanpilkan data</button>
+						<button id="submitSoal" type="button" class="btn btn-primary">+ Tambah</button>
+						<button onclick="getdata()" type="button" class="btn btn-dark">Tampilkan soal</button>
 						<button onclick="fresh()" type="button" class="btn btn-outline-info">Refresh</button>
 		
 					</form>
@@ -250,7 +250,7 @@
       
         //mengambil data link dari firebase
         $(document).ready(function(){
-            var rootRef = firebase.database().ref().child("gambar1/");
+            var rootRef = firebase.database().ref().child("gambar3/");
             rootRef.on("child_added", snap => {
             var id = snap.child("Link").val();
             emptyArray.push(id); // push link gambar ke emptyarray
@@ -260,7 +260,7 @@
         });
          //mengambil data link dari firebase
             $(document).ready(function(){
-            var rotRef = firebase.database().ref().child("gambar1/");
+            var rotRef = firebase.database().ref().child("gambar3/");
             rotRef.on("child_added", snap => {
             var idd = snap.child("Nama").val();
             Namagambar.push(idd); // push nama gambar ke Namagambar
@@ -302,7 +302,7 @@
    function getdata() {
 
 
-    firebase.database().ref('soalKuis1/').on('value', function (snapshot) {
+    firebase.database().ref('soalKuis3/').on('value', function (snapshot) {
         var value = snapshot.val();
         var htmls = [];
         
@@ -354,9 +354,9 @@
        var namebox = document.getElementById("namebox").value;
         if (namebox != ""){
             
-            //tambah data ke firbase storage dan folder gambar1 (gambar kuis1)
+            //tambah data ke firbase storage dan folder gambar3 (gambar kuis3)
             ImgName = userID;
-           var uploadTask = firebase.storage().ref('kuis1/'+ImgName+".png").put(files[0]);
+           var uploadTask = firebase.storage().ref('kuis3/'+ImgName+".png").put(files[0]);
                 
                 uploadTask.on('state_changed', function(snapshot){
                     var progress = (snapshot.bytesTranferred/snapshot.totalBytes)*100;
@@ -369,7 +369,7 @@
                     uploadTask.snapshot.ref.getDownloadURL().then(function(url){
                         ImgUrl = url;
                     
-                    firebase.database().ref('gambar1/'+ImgName).set({
+                    firebase.database().ref('gambar3/'+ImgName).set({
                         Nama:ImgName,
                         Link:ImgUrl
                     });
@@ -380,13 +380,13 @@
             });
         } 
             var ab="none";
-            firebase.database().ref('gambar1/'+userID).set({
+            firebase.database().ref('gambar3/'+userID).set({
                         Nama:ab,
                         Link:ab
                     });
        
             // menambahkan data ke firbase database
-            firebase.database().ref('soalKuis1/' + userID).set({
+            firebase.database().ref('soalKuis3/' + userID).set({
                 soalid:userID,
                 soal: soal,
                 opt1: opt1,
@@ -408,7 +408,7 @@
     var updateID = 0;
     $('body').on('click', '.updateData', function () {
         updateID = $(this).attr('data-id');
-        firebase.database().ref('soalKuis1/' + updateID).on('value', function (snapshot) {
+        firebase.database().ref('soalKuis3/' + updateID).on('value', function (snapshot) {
             var values = snapshot.val();
             var updateData = '<input id="soalid" type="text" style="pointer-events:none; background-color: rgb(7, 182, 138); color:white;" class="form-control" name="soal" value="' + values.soalid + '" required autofocus>\
             <div class="form-group">\
@@ -464,7 +464,7 @@
         };
 
         var updates = {};
-        updates['/soalKuis1/' + updateID] = postData;
+        updates['/soalKuis3/' + updateID] = postData;
 
         firebase.database().ref().update(updates);
 
@@ -480,11 +480,11 @@
     $('.deleteRecord').on('click', function () {
         var values = $(".users-remove-record-model").serializeArray();
         var id = values[0].value;
-        firebase.database().ref('soalKuis1/' + id).remove();//menghapus data pada soal kuis
-        firebase.database().ref('gambar1/' + id).remove();//menghapus data pada gambar soal
+        firebase.database().ref('soalKuis3/' + id).remove();//menghapus data pada soal kuis
+        firebase.database().ref('gambar3/' + id).remove();//menghapus data pada gambar soal
         //===================menghapus file firebase storage======================
   // Create a reference to the file to delete
-            var desertRef =  firebase.storage().ref('kuis1/'+id+'.png');
+            var desertRef =  firebase.storage().ref('kuis3/'+id+'.png');
 
             // Delete the file
             desertRef.delete().then(function() {
@@ -514,9 +514,9 @@
 </script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>
